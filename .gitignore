@@ -2,3 +2,5 @@
 logs/dbt.log
 dbt_duckdb_demo/dev.duckdb
 dbt_duckdb_demo/dev.duckdb.wal
+dbt_duckdb_kaggle_challenge/dev.duckdb
+*.wal

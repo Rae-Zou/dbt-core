@@ -42,3 +42,30 @@ Runtime Error
 [0m09:51:12.435626 [debug] [MainThread]: Command `dbt seed` failed at 09:51:12.434627 after 0.08 seconds
 [0m09:51:12.436626 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EFD3A5CC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EFDA51DE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EFDA51F750>]}
 [0m09:51:12.437624 [debug] [MainThread]: Flushing usage events
+[0m10:36:19.441646 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002481305BFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002481304A090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002480C3B3A10>]}
+
+
+============================== 10:36:19.451642 | 0ca50e2b-a410-4eed-b181-8b25d21ed7dc ==============================
+[0m10:36:19.451642 [info ] [MainThread]: Running with dbt=1.6.6
+[0m10:36:19.454642 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\asus\\Desktop\\GitHub\\dbt-core', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt init', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:39:12.767581 [debug] [MainThread]: Starter project path: C:\Users\asus\miniforge3\envs\dbtcore\Lib\site-packages\dbt\include\starter_project
+[0m10:39:12.872995 [info ] [MainThread]: 
+Your new dbt project "dbt_duckdb_kaggle_challenge" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:39:12.877004 [info ] [MainThread]: Setting up your profile.
+[0m10:39:17.917147 [debug] [MainThread]: Command `dbt init` succeeded at 10:39:17.916148 after 178.53 seconds
+[0m10:39:17.919145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024812922610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248122B9BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002480C3B3B10>]}
+[0m10:39:17.920146 [debug] [MainThread]: Flushing usage events
