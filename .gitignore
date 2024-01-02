@@ -1,2 +1,4 @@
 
 logs/dbt.log
+dbt_duckdb_demo/dev.duckdb
+dbt_duckdb_demo/dev.duckdb.wal
