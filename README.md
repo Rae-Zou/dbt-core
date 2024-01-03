@@ -41,6 +41,7 @@ https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data?select=offers.cs
 
     ![Alt text](./images/duckdb-conn.png)
     The **Path** should the same as you defined in the profiles.yml or choose **Open** to browse up the directory.
+    ![Alt text](./images/duckdb-path.png)
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
