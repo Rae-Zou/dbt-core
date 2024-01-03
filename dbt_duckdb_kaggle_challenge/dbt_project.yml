@@ -32,6 +32,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   dbt_duckdb_kaggle_challenge:
-    # Config indicated by + and applies to all files under models/example/
-    example:
+    +required_docs: true
+    # all models should have not_null
+    +required_tests: {"not_null": 1}
+    mart:
+      +materialized: table
+    intermediate:
+      +materialized: view
+    staging:
       +materialized: view

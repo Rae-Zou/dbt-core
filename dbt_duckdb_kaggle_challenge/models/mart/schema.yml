@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: analytics_transactions_yearmonth
+    description: "monthly granular results of transactions"
+    columns:
+      - name: transaction_id
+        description: "A unique id representing a customer"
+        tests:
+          - not_null
