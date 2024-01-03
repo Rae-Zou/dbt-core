@@ -1,0 +1,72 @@
+version: 2
+
+models:
+  - name: int_offers
+    description:  "The offer table, which contains the consolidated result for offers"
+    tests:
+    - unique:
+        column_name: "concat(product_category, company_id, brand_id)"
+    - not_null:
+        column_name: "concat(product_category, company_id, brand_id)"
+
+  - name: int_transactions_offers
+    description: "an intermediate table which has offered and discounted flags "
+    tests:    
+      - not_null:
+          column_name: "concat(transaction_id, product_category, company_id, brand_id)"
+    columns:
+      - name: c
+        description: "A unique id representing a customer"
+        tests:
+          - not_null
+          - unique
+      - name: chain
+        description: "An integer representing a store chain"
+        tests:
+          - not_null
+      - name: dept
+        description: " An aggregate grouping of the Category"
+        tests:
+          - not_null
+      - name: product_category
+        description: " The product category"
+        tests:
+          - not_null
+      - name: company_id
+        description: " An id of the company that sells the item"
+        tests:
+          - not_null
+      - name: brand_id
+        description: "An id of the brand to which the item belongs"
+        tests:
+          - not_null
+      - name: date
+        description: "The date of purchase"
+        tests:
+          - not_null
+      - name: productsize
+        description: "The amount of the product purchase"
+        tests:
+          - not_null
+      - name: productmeasure
+        description: "The units of the product purchase"
+        tests:
+          - not_null
+      - name: purchasequantity
+        description: "The number of units purchased"
+        tests:
+          - not_null
+      - name: purchaseamount
+        description: "The dollar amount of the purchase"
+        tests:
+          - not_null
+      - name: offered
+        description: "The flag indicates the offer of discount"
+        tests:
+          - not_null
+      - name: discounted
+        description: "The flag indicates the customer had discount"
+        tests:
+          - not_null
+
+  
