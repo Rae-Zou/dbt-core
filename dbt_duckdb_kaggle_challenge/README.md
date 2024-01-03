@@ -32,14 +32,14 @@ DuckDB is designed to be embedded within applications or used as a serverless da
 - dbt test
 - dbt docs generate
 - dbt docs serve
-![Alt text](image-2.png)
+![Alt text](./images/dbt-doc.png)
 Data source reference:
 https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data?select=offers.csv.gz
 
 ### Verify the data using DBeaver IDE
 - [Connect DuckDB to DBeaver](https://duckdb.org/docs/guides/sql_editors/dbeaver)
 
-    ![![Alt text]](image.png)
+    ![Alt text](./images/duckdb-conn.png)
     The **Path** should the same as you defined in the profiles.yml or choose **Open** to browse up the directory.
 
 ### Resources:
