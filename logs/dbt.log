@@ -167,3 +167,30 @@ Runtime Error
 [0m14:16:32.837987 [debug] [MainThread]: Command `dbt docs generate` failed at 14:16:32.837987 after 0.07 seconds
 [0m14:16:32.840418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B3156B7090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B3164555D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B316456FD0>]}
 [0m14:16:32.841532 [debug] [MainThread]: Flushing usage events
+[0m17:26:41.572886 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001868DF440D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001868E777A50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001868E78A950>]}
+
+
+============================== 17:26:41.580896 | 2dd4c440-d4f5-4e5d-874c-83f73fda737f ==============================
+[0m17:26:41.580896 [info ] [MainThread]: Running with dbt=1.6.6
+[0m17:26:41.583205 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\asus\\Desktop\\GitHub\\dbt-core', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt init', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:28:23.452101 [debug] [MainThread]: Starter project path: C:\Users\asus\miniforge3\envs\dbtcore\Lib\site-packages\dbt\include\starter_project
+[0m17:28:23.574262 [info ] [MainThread]: 
+Your new dbt project "dbt_refactoring_for_modularity" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:28:23.578303 [info ] [MainThread]: Setting up your profile.
+[0m17:28:26.542606 [debug] [MainThread]: Command `dbt init` succeeded at 17:28:26.541616 after 105.02 seconds
+[0m17:28:26.543606 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001868E786CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001868E284F10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018687CA15D0>]}
+[0m17:28:26.545607 [debug] [MainThread]: Flushing usage events
