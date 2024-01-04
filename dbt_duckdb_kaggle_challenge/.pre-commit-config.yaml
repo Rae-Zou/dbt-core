@@ -1,0 +1,16 @@
+repos:
+- repo: https://github.com/dbt-checkpoint/dbt-checkpoint
+  rev: v1.1.1
+  hooks:
+  - id: check-script-semicolon
+  - id: check-script-has-no-table-name
+  - id: dbt-test
+  - id: dbt-docs-generate
+  - id: check-model-has-all-columns
+    name: Check columns - staging
+    files: ^models/staging
+  - id: check-model-has-all-columns
+    name: Check columns - marts
+    files: ^models/marts
+  - id: check-model-columns-have-desc
+    files: ^models/marts
