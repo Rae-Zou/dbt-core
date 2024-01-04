@@ -8,11 +8,13 @@ models:
         description: "A unique id representing a customer"
         tests:
           - not_null
+          - relationships:
+              to: ref('int_transactions_offers')
+              field: transaction_id
 
   - name: order_by_offervalue
     description: "How much value is each offer"
     columns:
       - name: product_category
         description: "The product category"
-        tests:
-          - not_null
+        

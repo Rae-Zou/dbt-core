@@ -37,7 +37,7 @@ models:
     +required_tests: {"not_null": 1}
     marts:
     # marts should have not_null and relationship tests
-      +required_tests: {"relationship.*": 1}
+      +required_tests: {"relationship.*": 1, "not_null": 1}
       +materialized: table
     intermediate:
       +materialized: view
