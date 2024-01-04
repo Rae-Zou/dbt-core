@@ -48,6 +48,7 @@ models:
                 severity: warn
                 error_if: ">10"
                 warn_if: ">5"
+                where: "date>'2012-03-01'"
 
       - name: chain
         description: "An integer representing a store chain"
