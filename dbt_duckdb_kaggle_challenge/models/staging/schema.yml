@@ -3,6 +3,9 @@ version: 2
 models:
   - name: stg_offers
     description: "contains information about the offers"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "offervalue >= 0"
     columns:
       - name: offer_id
         description: "An id representing a certain offer"
@@ -16,7 +19,10 @@ models:
         description: "The number of units one must purchase to get the discount"
         tests:
           - assert_column_is_greater_or_equal_to_0
-
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              row_condition: "offer_id is not null"
+              strictly: False
       - name: company_id
         description: "An id of the company that sells the item"
 
