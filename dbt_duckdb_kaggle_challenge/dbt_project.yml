@@ -43,3 +43,6 @@ models:
       +materialized: view
     staging:
       +materialized: view
+tests:
+  dbt_duckdb_kaggle_challenge:
+    +store_failures: true
