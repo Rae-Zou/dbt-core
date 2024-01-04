@@ -14,12 +14,16 @@ models:
 
       - name: quantity
         description: "The number of units one must purchase to get the discount"
+        tests:
+          - assert_column_is_greater_or_equal_to_0
 
       - name: company_id
         description: "An id of the company that sells the item"
 
       - name: offervalue
         description: "The dollar value of the offer"
+        tests:
+          - assert_column_is_greater_or_equal_to_0
 
       - name: brand_id
         description: "An id of the brand to which the item belongs"
