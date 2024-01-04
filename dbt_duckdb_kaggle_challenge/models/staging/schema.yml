@@ -43,6 +43,11 @@ models:
         description: "A unique id representing a customer"
         tests:
           - not_null
+          - unique:
+              config:
+                severity: warn
+                error_if: ">10"
+                warn_if: ">5"
 
       - name: chain
         description: "An integer representing a store chain"
