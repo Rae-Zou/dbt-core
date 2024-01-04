@@ -35,7 +35,9 @@ models:
     +required_docs: true
     # all models should have not_null
     +required_tests: {"not_null": 1}
-    mart:
+    marts:
+    # marts should have not_null and relationship tests
+      +required_tests: {"relationship.*": 1}
       +materialized: table
     intermediate:
       +materialized: view

@@ -9,6 +9,22 @@ models:
         tests:
           - not_null
 
+      - name: product_category 
+        description: "The product category"
+
+      - name: quantity
+        description: "The number of units one must purchase to get the discount"
+
+      - name: company_id
+        description: "An id of the company that sells the item"
+
+      - name: offervalue
+        description: "The dollar value of the offer"
+
+      - name: brand_id
+        description: "An id of the brand to which the item belongs"
+
+  
   
   - name: stg_transactions
     description: "contains transaction history for all customers"
@@ -17,6 +33,36 @@ models:
         description: "A unique id representing a customer"
         tests:
           - not_null
+
+      - name: chain
+        description: "An integer representing a store chain"
+
+      - name: dept
+        description: " An aggregate grouping of the Category"
+
+      - name: product_category
+        description: " The product category"
+
+      - name: company_id
+        description: " An id of the company that sells the item"
+
+      - name: brand_id
+        description: "An id of the brand to which the item belongs"
+
+      - name: date
+        description: "The date of purchase"
+
+      - name: productsize
+        description: "The amount of the product purchase"
+
+      - name: productmeasure
+        description: "The units of the product purchase"
+
+      - name: purchasequantity
+        description: "The number of units purchased"
+
+      - name: purchaseamount
+        description: "The dollar amount of the purchase"
 
 
   
