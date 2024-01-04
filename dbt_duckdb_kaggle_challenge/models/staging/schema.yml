@@ -49,6 +49,7 @@ models:
                 error_if: ">10"
                 warn_if: ">5"
                 where: "date>'2012-03-01'"
+                store_failures: true
 
       - name: chain
         description: "An integer representing a store chain"
