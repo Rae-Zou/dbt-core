@@ -6,3 +6,4 @@ dbt_duckdb_kaggle_challenge/dev.duckdb
 *.wal
 logs/dbt.log
 logs/dbt.log
+dbt_refactoring_for_modularity/dev.duckdb
