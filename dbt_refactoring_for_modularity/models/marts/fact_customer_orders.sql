@@ -1,14 +1,13 @@
 with
 -- Import CTEs
 orders as (
-  select * from {{ ref('stg_main_jaffle_shop__orders') }}
+  select * from {{ ref("int_orders")}}
 ),
+
 customers as (
   select * from {{ ref('stg_main_jaffle_shop__customers') }}
 ),
-payments as (
-  select * from {{ ref('stg_main_stripe__payments') }}
-),
+
 -- Logical CTEs
 customer_order_history as (
   select 
@@ -16,29 +15,23 @@ customer_order_history as (
       customers.full_name,
       customers.surname,
       customers.givenname,
-      min(order_date) as first_order_date,
-      min(case 
-        when orders.order_status NOT IN ('returned','return_pending') 
-        then order_date 
-      end) as first_non_returned_order_date,
-      max(case 
-        when orders.order_status NOT IN ('returned','return_pending') 
-        then order_date 
-      end) as most_recent_non_returned_order_date,
-      COALESCE(max(user_order_seq),0) as order_count,
+      min(orders.order_date) as first_order_date,
+      min(orders.valid_order_date) as first_non_returned_order_date,
+      max(orders.valid_order_date) as most_recent_non_returned_order_date,
+      COALESCE(max(orders.user_order_seq),0) as order_count,
       COALESCE(count(case 
-                    when orders.order_status != 'returned' 
+                    when orders.valid_order_date is not null 
                     then 1 
                     end),0) as non_returned_order_count,
       sum(case 
-        when orders.order_status NOT IN ('returned','return_pending') 
-        then payments.payment_amount else 0 
+        when orders.valid_order_date is not null  
+        then orders.order_value_dollars else 0 
         end) as total_lifetime_value,
       sum(case 
-        when orders.order_status NOT IN ('returned','return_pending') 
-        then payments.payment_amount else 0 
+        when orders.valid_order_date is not null  
+        then orders.order_value_dollars else 0  
         end)/NULLIF(count(case 
-                          when orders.order_status NOT IN ('returned','return_pending') 
+                          when orders.valid_order_date is not null
                           then 1 
                           end),0) as avg_non_returned_order_value,
       array_agg(distinct orders.order_id) as order_ids
@@ -48,10 +41,10 @@ customer_order_history as (
   join customers
   on orders.customer_id = customers.customer_id
 
-  left outer join payments
-  on orders.order_id = payments.order_id
+  {# left outer join payments
+  on orders.order_id = payments.order_id #}
 
-  where orders.order_status NOT IN ('pending') and orders.order_status != 'fail'
+  -- where orders.order_status NOT IN ('pending') -- pending does not exit in orders table, it can be removed 
 
   group by customers.customer_id, customers.full_name, customers.surname, customers.givenname
 
@@ -66,7 +59,7 @@ final as (
     first_order_date,
     order_count,
     total_lifetime_value,
-    payment_amount as order_value_dollars,
+    orders.order_value_dollars,
     orders.order_status
   from orders 
 
@@ -76,10 +69,10 @@ final as (
   join customer_order_history
   on orders.customer_id = customer_order_history.customer_id
 
-  left outer join payments
-  on orders.order_id = payments.order_id
+  {# left outer join payments
+  on orders.order_id = payments.order_id #}
 
-  where orders.order_status != 'fail'
+  
 )
 -- Simple select statement
 select * from final
