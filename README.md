@@ -36,7 +36,7 @@ DuckDB is designed to be embedded within applications or used as a serverless da
 Data source reference:
 https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data?select=offers.csv.gz
 
-### Verify the data using DBeaver IDE
+### (Optional) Verify the data using DBeaver IDE
 - [Connect DuckDB to DBeaver](https://duckdb.org/docs/guides/sql_editors/dbeaver)
 
     ![Alt text](./images/duckdb-conn.png)
