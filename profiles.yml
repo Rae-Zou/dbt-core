@@ -39,3 +39,17 @@ dbt_refactoring_for_modularity:
       threads: 4
 
   target: dev
+
+dbt_refactoring_practice:
+  outputs:
+    dev:
+      type: duckdb
+      path: dev.duckdb
+      threads: 1
+
+    prod:
+      type: duckdb
+      path: prod.duckdb
+      threads: 4
+
+  target: dev
