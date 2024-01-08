@@ -1,12 +1,17 @@
-WITH paid_orders as (
-    select Orders.ID as order_id,
+WITH 
+-- Import CTEs
+
+-- Logical CTEs
+paid_orders as (
+    select 
+        Orders.ID as order_id,
         Orders.USER_ID	as customer_id,
         Orders.ORDER_DATE AS order_placed_at,
-            Orders.STATUS AS order_status,
+        Orders.STATUS AS order_status,
         p.total_amount_paid,
         p.payment_finalized_date,
         C.FIRST_NAME    as customer_first_name,
-            C.LAST_NAME as customer_last_name
+        C.LAST_NAME as customer_last_name
     FROM {{ ref('orders') }} as Orders
     left join (
         select 
@@ -15,7 +20,8 @@ WITH paid_orders as (
             sum(AMOUNT) / 100.0 as total_amount_paid
         from {{ ref('payments') }}
         where STATUS <> 'fail'
-        group by 1) p ON orders.ID = p.order_id
+        group by 1
+        ) p ON orders.ID = p.order_id
     left join {{ ref('customers') }} C on orders.USER_ID = C.ID 
 ),
 customer_orders as (
@@ -29,6 +35,8 @@ customer_orders as (
     on orders.USER_ID = C.ID 
     group by 1)
 
+
+-- Final CTE
 select
     p.*,
     ROW_NUMBER() OVER (ORDER BY p.order_id) as transaction_seq,
