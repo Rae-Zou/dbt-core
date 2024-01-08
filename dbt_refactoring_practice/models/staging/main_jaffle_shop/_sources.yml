@@ -1,0 +1,9 @@
+version: 2
+
+sources: # dev.main_jaffle_shop.raw_customers
+  - name: main_jaffle_shop
+    database: dev
+    tables: 
+      - name: customers
+      - name: orders
+    

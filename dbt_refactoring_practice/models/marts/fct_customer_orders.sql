@@ -1,38 +1,45 @@
 WITH 
 -- Import CTEs
+orders as (
+    select * from {{ ref("stg_main_jaffle_shop__orders")}}
+),
 
+customers as (
+    select * from {{ ref('stg_main_jaffle_shop__customers') }}
+),
+
+payments as (
+    select * from {{ ref('stg_main_stripe__payments') }}
+),
 -- Logical CTEs
 paid_orders as (
     select 
-        Orders.ID as order_id,
-        Orders.USER_ID	as customer_id,
-        Orders.ORDER_DATE AS order_placed_at,
-        Orders.STATUS AS order_status,
+        orders.*,
         p.total_amount_paid,
         p.payment_finalized_date,
-        C.FIRST_NAME    as customer_first_name,
-        C.LAST_NAME as customer_last_name
-    FROM {{ ref('orders') }} as Orders
+        C.customer_first_name,
+        C.customer_last_name
+    FROM orders
     left join (
         select 
-            ORDERID as order_id, 
+            order_id, 
             max(CREATED) as payment_finalized_date, 
             sum(AMOUNT) / 100.0 as total_amount_paid
-        from {{ ref('payments') }}
-        where STATUS <> 'fail'
+        from payments
+        where payment_status <> 'fail'
         group by 1
-        ) p ON orders.ID = p.order_id
-    left join {{ ref('customers') }} C on orders.USER_ID = C.ID 
+        ) p ON orders.order_id = p.order_id
+    left join customers C on orders.customer_id = C.customer_id 
 ),
 customer_orders as (
     select 
-        C.ID as customer_id
-        , min(ORDER_DATE) as first_order_date
-        , max(ORDER_DATE) as most_recent_order_date
-        , count(ORDERS.ID) AS number_of_orders
-    from {{ ref('customers') }} C 
-    left join {{ ref('orders') }} as Orders
-    on orders.USER_ID = C.ID 
+        C.customer_id
+        , min(order_placed_at) as first_order_date
+        , max(order_placed_at) as most_recent_order_date
+        , count(order_id) AS number_of_orders
+    from customers C 
+    left join orders
+    on orders.customer_id = C.customer_id 
     group by 1)
 
 
