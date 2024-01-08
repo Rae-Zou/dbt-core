@@ -25,7 +25,10 @@ completed_payments as (
 
 paid_orders as (
     select 
-        orders.*,
+        orders.order_id,
+        orders.customer_id,
+        orders.order_placed_at,
+        orders.order_status,
         completed_payments.total_amount_paid,
         completed_payments.payment_finalized_date,
         customers.customer_first_name,
@@ -33,18 +36,6 @@ paid_orders as (
     from orders
     left join completed_payments ON orders.order_id = completed_payments.order_id
     left join customers on orders.customer_id = customers.customer_id 
-),
-
-customer_orders as (
-    select 
-        customers.customer_id
-        , min(order_placed_at) as first_order_date
-        , max(order_placed_at) as most_recent_order_date
-        , count(order_id) AS number_of_orders
-    from customers 
-    left join orders
-    on orders.customer_id = customers.customer_id 
-    group by 1
 ),
 
 -- Final CTE
@@ -64,7 +55,10 @@ final as (
         -- customer lifetime value
         x.clv_bad as customer_lifetime_value,
         -- 1st day of sale
-        customer_orders.first_order_date as fdos
+        first_value(order_placed_at) over (
+            partition by customer_id
+            order by order_placed_at
+            ) as fdos
     FROM paid_orders
     left join customer_orders USING (customer_id)
     LEFT OUTER JOIN 
