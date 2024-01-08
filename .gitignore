@@ -8,3 +8,4 @@ logs/dbt.log
 logs/dbt.log
 dbt_refactoring_for_modularity/dev.duckdb
 dbt_refactoring_practice/dev.duckdb
+dbt_refactoring_practice/dev.duckdb
