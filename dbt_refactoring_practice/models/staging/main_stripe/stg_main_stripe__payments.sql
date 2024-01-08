@@ -10,10 +10,10 @@ transformed as (
     orderid as order_id,
     paymentmethod as payment_method,
     status as payment_status,
-    amount,
-    created,
+    amount as payment_amount,
+    created as payment_created_at,
     -- add some new simple transformed columns
-    round(amount/100.0,2) as payment_amount
+    -- round(amount/100.0,2) as round_payment_amount
   from source
 )
 

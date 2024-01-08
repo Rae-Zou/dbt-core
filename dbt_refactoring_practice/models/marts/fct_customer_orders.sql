@@ -12,11 +12,12 @@ payments as (
     select * from {{ ref('stg_main_stripe__payments') }}
 ),
 
+-- Logical CTEs
 completed_payments as (
     select 
         order_id, 
-        max(CREATED) as payment_finalized_date, 
-        sum(AMOUNT) / 100.0 as total_amount_paid
+        max(payment_created_at) as payment_finalized_date, 
+        sum(payment_amount) / 100.0 as total_amount_paid
     from payments
     where payment_status <> 'fail'
     group by 1 
@@ -25,16 +26,15 @@ completed_payments as (
 paid_orders as (
     select 
         orders.*,
-        p.total_amount_paid,
-        p.payment_finalized_date,
-        C.customer_first_name,
-        C.customer_last_name
+        completed_payments.total_amount_paid,
+        completed_payments.payment_finalized_date,
+        customers.customer_first_name,
+        customers.customer_last_name
     from orders
-    left join completed_payments p ON orders.order_id = p.order_id
-    left join customers C on orders.customer_id = C.customer_id 
+    left join completed_payments ON orders.order_id = completed_payments.order_id
+    left join customers on orders.customer_id = customers.customer_id 
 ),
 
--- Logical CTEs
 customer_orders as (
     select 
         customers.customer_id
