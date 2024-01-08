@@ -11,7 +11,9 @@ transformed as (
     paymentmethod as payment_method,
     status as payment_status,
     amount,
-    created
+    created,
+    -- add some new simple transformed columns
+    round(amount/100.0,2) as payment_amount
   from source
 )
 

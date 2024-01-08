@@ -1,53 +1,84 @@
 WITH 
 -- Import CTEs
-orders as (
-    select * from {{ ref('int_orders') }}
-),
-
 customers as (
     select * from {{ ref('stg_main_jaffle_shop__customers') }}
+),
+
+orders as (
+  select * from {{ ref('stg_main_jaffle_shop__orders') }}
+),
+
+payments as (
+    select * from {{ ref('stg_main_stripe__payments') }}
+),
+
+completed_payments as (
+    select 
+        order_id, 
+        max(CREATED) as payment_finalized_date, 
+        sum(AMOUNT) / 100.0 as total_amount_paid
+    from payments
+    where payment_status <> 'fail'
+    group by 1 
+),
+
+paid_orders as (
+    select 
+        orders.*,
+        p.total_amount_paid,
+        p.payment_finalized_date,
+        C.customer_first_name,
+        C.customer_last_name
+    from orders
+    left join completed_payments p ON orders.order_id = p.order_id
+    left join customers C on orders.customer_id = C.customer_id 
 ),
 
 -- Logical CTEs
 customer_orders as (
     select 
-        C.customer_id
+        customers.customer_id
         , min(order_placed_at) as first_order_date
         , max(order_placed_at) as most_recent_order_date
         , count(order_id) AS number_of_orders
-    from customers C 
+    from customers 
     left join orders
-    on orders.customer_id = C.customer_id 
+    on orders.customer_id = customers.customer_id 
     group by 1
 ),
 
 -- Final CTE
 final as (
     select
-        p.*,
+        paid_orders.*,
+        -- sales transaction sequence
         ROW_NUMBER() OVER (ORDER BY p.order_id) as transaction_seq,
+        -- customer sales sequence
         ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY p.order_id) as customer_sales_seq,
+        -- new v.s. returning customers
         CASE 
             WHEN c.first_order_date = p.order_placed_at
             THEN 'new'
             ELSE 'return' 
         END as nvsr,
+        -- customer lifetime value
         x.clv_bad as customer_lifetime_value,
-        c.first_order_date as fdos
-    FROM orders p
-    left join customer_orders as c USING (customer_id)
+        -- 1st day of sale
+        customer_orders.first_order_date as fdos
+    FROM paid_orders
+    left join customer_orders USING (customer_id)
     LEFT OUTER JOIN 
     (
         select
-            p.order_id,
+            paid_orders.order_id,
             sum(t2.total_amount_paid) as clv_bad
-        from orders p
-        left join orders t2 
-            on p.customer_id = t2.customer_id and p.order_id >= t2.order_id
+        from paid_orders
+        left join paid_orders t2 
+            on paid_orders.customer_id = t2.customer_id and paid_orders.order_id >= t2.order_id
         group by 1
-        order by p.order_id
-    ) x on x.order_id = p.order_id
-    ORDER BY p.order_id
+        order by paid_orders.order_id
+    ) x on x.order_id = paid_orders.order_id
+    ORDER BY paid_orders.order_id
 )
 
 -- Simple select statement
