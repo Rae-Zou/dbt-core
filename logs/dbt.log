@@ -221,3 +221,171 @@ Happy modeling!
 [0m16:29:16.389706 [debug] [MainThread]: Command `dbt init` succeeded at 16:29:16.388708 after 16.51 seconds
 [0m16:29:16.391713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DF6F2C8950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DF68A8C210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DF68C11650>]}
 [0m16:29:16.393709 [debug] [MainThread]: Flushing usage events
+[0m08:30:14.182769 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x049B7040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x066716D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x066717F0>]}
+
+
+============================== 08:30:14.198393 | 26c95d10-693f-48fc-ad0f-cf875d2d57fd ==============================
+[0m08:30:14.198393 [info ] [MainThread]: Running with dbt=1.6.6
+[0m08:30:14.198393 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt init', 'printer_width': '80', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\asus\\Desktop\\GitHub\\dbt-core', 'cache_selected_only': 'False', 'fail_fast': 'False', 'log_cache_events': 'False', 'target_path': 'None', 'log_format': 'default', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'static_parser': 'True', 'quiet': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'write_json': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m08:30:35.166501 [debug] [MainThread]: Starter project path: c:\users\asus\appdata\local\programs\python\python38-32\lib\site-packages\dbt\include\starter_project
+[0m08:30:35.281409 [info ] [MainThread]: 
+Your new dbt project "dbt_snowflake" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m08:30:35.297033 [info ] [MainThread]: Setting up your profile.
+[0m08:30:35.321912 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No adapters available. Learn how to install an adapter by going to https://docs.getdbt.com/docs/connect-adapters#install-using-the-cli
+[0m08:30:35.325907 [debug] [MainThread]: Command `dbt init` failed at 08:30:35.324905 after 21.17 seconds
+[0m08:30:35.326910 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x049B7040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x06671CE8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x06671F10>]}
+[0m08:30:35.327906 [debug] [MainThread]: Flushing usage events
+[0m08:37:53.363219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288A8C64BB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288AB5ECF40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288AB5ECEE0>]}
+
+
+============================== 08:37:53.374527 | 851fdbec-242c-49b8-a677-e82636050fce ==============================
+[0m08:37:53.374527 [info ] [MainThread]: Running with dbt=1.8.0
+[0m08:37:53.376527 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\asus\\Desktop\\GitHub\\dbt-core', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m08:38:09.335581 [debug] [MainThread]: Starter project path: C:\Users\asus\miniforge3\lib\site-packages\dbt\include\starter_project
+[0m08:38:09.443340 [info ] [MainThread]: 
+Your new dbt project "dbt_snowflake" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m08:38:09.448338 [info ] [MainThread]: Setting up your profile.
+[0m08:42:24.556753 [info ] [MainThread]: Profile dbt_snowflake written to C:\Users\asus\Desktop\GitHub\dbt-core\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m08:42:24.566985 [debug] [MainThread]: Command `dbt init` succeeded at 08:42:24.566985 after 271.47 seconds
+[0m08:42:24.566985 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288A8C64BB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288AB4A0B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288AB5ED120>]}
+[0m08:42:24.566985 [debug] [MainThread]: Flushing usage events
+[0m08:42:42.382866 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B73D634B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B73FFBCF40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B73FFBCEE0>]}
+
+
+============================== 08:42:42.395125 | 76628787-eff8-4f29-9824-01d80edb3f5e ==============================
+[0m08:42:42.395125 [info ] [MainThread]: Running with dbt=1.8.0
+[0m08:42:42.399475 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\asus\\Desktop\\GitHub\\dbt-core', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m08:42:42.472421 [info ] [MainThread]: dbt version: 1.8.0
+[0m08:42:42.474421 [info ] [MainThread]: python version: 3.10.12
+[0m08:42:42.475421 [info ] [MainThread]: python path: C:\Users\asus\miniforge3\python.exe
+[0m08:42:42.477422 [info ] [MainThread]: os info: Windows-10-10.0.19041-SP0
+[0m08:42:42.497566 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.duckdb'
+[0m08:42:42.500409 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.duckdb'
+[0m08:42:42.511752 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.duckdb'
+[0m08:42:42.517572 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.duckdb'
+[0m08:42:44.032911 [info ] [MainThread]: Using profiles dir at C:\Users\asus\Desktop\GitHub\dbt-core
+[0m08:42:44.152828 [info ] [MainThread]: Using profiles.yml file at C:\Users\asus\Desktop\GitHub\dbt-core\profiles.yml
+[0m08:42:44.200687 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\asus\Desktop\GitHub\dbt-core\dbt_project.yml
+[0m08:42:44.394094 [info ] [MainThread]: Configuration:
+[0m08:42:44.407722 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m08:42:44.454996 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m08:42:44.476465 [info ] [MainThread]: Required dependencies:
+[0m08:42:44.487117 [debug] [MainThread]: Executing "git --help"
+[0m08:42:45.024543 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone             Clone a repository into a new directory\n   init              Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add               Add file contents to the index\n   mv                Move or rename a file, a directory, or a symlink\n   restore           Restore working tree files\n   rm                Remove files from the working tree and from the index\n   sparse-checkout   Initialize and modify the sparse-checkout\n\nexamine the history and state (see also: git help revisions)\n   bisect            Use binary search to find the commit that introduced a bug\n   diff              Show changes between commits, commit and working tree, etc\n   grep              Print lines matching a pattern\n   log               Show commit logs\n   show              Show various types of objects\n   status            Show the working tree status\n\ngrow, mark and tweak your common history\n   branch            List, create, or delete branches\n   commit            Record changes to the repository\n   merge             Join two or more development histories together\n   rebase            Reapply commits on top of another base tip\n   reset             Reset current HEAD to the specified state\n   switch            Switch branches\n   tag               Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch             Download objects and refs from another repository\n   pull              Fetch from and integrate with another repository or a local branch\n   push              Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m08:42:45.024543 [debug] [MainThread]: STDERR: "b''"
+[0m08:42:45.024543 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m08:42:45.097692 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m08:42:45.128943 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m08:42:45.180766 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "dbt_duckdb_demo", target "dev" invalid: Runtime Error
+    Could not find adapter type duckdb!
+
+Runtime Error
+  Credentials in profile "dbt_duckdb_kaggle_challenge", target "dev" invalid: Runtime Error
+    Could not find adapter type duckdb!
+
+Runtime Error
+  Credentials in profile "dbt_refactoring_for_modularity", target "dev" invalid: Runtime Error
+    Could not find adapter type duckdb!
+
+Runtime Error
+  Credentials in profile "dbt_refactoring_practice", target "dev" invalid: Runtime Error
+    Could not find adapter type duckdb!
+
+
+[0m08:42:45.231344 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\asus\Desktop\GitHub\dbt-core\dbt_project.yml> not found
+
+[0m08:42:45.243310 [debug] [MainThread]: Command `dbt debug` failed at 08:42:45.243310 after 3.14 seconds
+[0m08:42:45.243310 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B73D634B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B73C37EC80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B73FFC41C0>]}
+[0m08:42:45.243310 [debug] [MainThread]: Flushing usage events
+[0m08:44:56.951748 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000253E9EBBFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000253E9EBA050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000253E9EB8A90>]}
+
+
+============================== 08:44:56.967371 | f8045fe8-74d7-4023-aa6a-1bf6f4c43b62 ==============================
+[0m08:44:56.967371 [info ] [MainThread]: Running with dbt=1.6.6
+[0m08:44:56.967371 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\asus\\Desktop\\GitHub\\dbt-core', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m08:44:56.967371 [info ] [MainThread]: dbt version: 1.6.6
+[0m08:44:56.967371 [info ] [MainThread]: python version: 3.11.6
+[0m08:44:56.967371 [info ] [MainThread]: python path: C:\Users\asus\miniforge3\envs\dbtcore\python.exe
+[0m08:44:56.967371 [info ] [MainThread]: os info: Windows-10-10.0.19041-SP0
+[0m08:44:57.146141 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.snowflake'
+[0m08:44:57.146141 [info ] [MainThread]: Using profiles dir at C:\Users\asus\Desktop\GitHub\dbt-core
+[0m08:44:57.146141 [info ] [MainThread]: Using profiles.yml file at C:\Users\asus\Desktop\GitHub\dbt-core\profiles.yml
+[0m08:44:57.146141 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\asus\Desktop\GitHub\dbt-core\dbt_project.yml
+[0m08:44:57.146141 [info ] [MainThread]: Configuration:
+[0m08:44:57.146141 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m08:44:57.146141 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m08:44:57.146141 [info ] [MainThread]: Required dependencies:
+[0m08:44:57.161757 [debug] [MainThread]: Executing "git --help"
+[0m08:44:57.234099 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone             Clone a repository into a new directory\n   init              Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add               Add file contents to the index\n   mv                Move or rename a file, a directory, or a symlink\n   restore           Restore working tree files\n   rm                Remove files from the working tree and from the index\n   sparse-checkout   Initialize and modify the sparse-checkout\n\nexamine the history and state (see also: git help revisions)\n   bisect            Use binary search to find the commit that introduced a bug\n   diff              Show changes between commits, commit and working tree, etc\n   grep              Print lines matching a pattern\n   log               Show commit logs\n   show              Show various types of objects\n   status            Show the working tree status\n\ngrow, mark and tweak your common history\n   branch            List, create, or delete branches\n   commit            Record changes to the repository\n   merge             Join two or more development histories together\n   rebase            Reapply commits on top of another base tip\n   reset             Reset current HEAD to the specified state\n   switch            Switch branches\n   tag               Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch             Download objects and refs from another repository\n   pull              Fetch from and integrate with another repository or a local branch\n   push              Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m08:44:57.249575 [debug] [MainThread]: STDERR: "b''"
+[0m08:44:57.251571 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m08:44:57.253573 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m08:44:57.255572 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m08:44:57.257575 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "dbt_snowflake", target "dev" invalid: Runtime Error
+    Could not find adapter type snowflake!
+
+
+[0m08:44:57.260571 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\asus\Desktop\GitHub\dbt-core\dbt_project.yml> not found
+
+[0m08:44:57.266572 [debug] [MainThread]: Command `dbt debug` failed at 08:44:57.264571 after 0.36 seconds
+[0m08:44:57.268573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000253E33F1790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000253E33F1710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000253E9ED8090>]}
+[0m08:44:57.270570 [debug] [MainThread]: Flushing usage events
+[0m09:05:46.128964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B430878BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B433A4A890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B433A4A830>]}
+
+
+============================== 09:05:46.144610 | 80bc80e0-074f-43e1-b7ad-98f86377ca01 ==============================
+[0m09:05:46.144610 [info ] [MainThread]: Running with dbt=1.8.0
+[0m09:05:46.144610 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\asus\\Desktop\\GitHub\\dbt-core', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m09:05:46.201009 [info ] [MainThread]: dbt version: 1.8.0
+[0m09:05:46.216682 [info ] [MainThread]: python version: 3.10.12
+[0m09:05:46.218689 [info ] [MainThread]: python path: C:\Users\asus\miniforge3\python.exe
+[0m09:05:46.220686 [info ] [MainThread]: os info: Windows-10-10.0.19041-SP0
+[0m09:05:47.531364 [info ] [MainThread]: Using profiles dir at C:\Users\asus\Desktop\GitHub\dbt-core
+[0m09:05:47.531364 [info ] [MainThread]: Using profiles.yml file at C:\Users\asus\Desktop\GitHub\dbt-core\profiles.yml
+[0m09:05:47.531364 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\asus\Desktop\GitHub\dbt-core\dbt_project.yml
+[0m09:05:47.542398 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m09:05:47.547125 [debug] [MainThread]: Command `dbt debug` failed at 09:05:47.547125 after 1.63 seconds
+[0m09:05:47.549968 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B430878BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4339D4220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B430631120>]}
+[0m09:05:47.551968 [debug] [MainThread]: Flushing usage events

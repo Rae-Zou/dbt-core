@@ -8,4 +8,9 @@ logs/dbt.log
 logs/dbt.log
 dbt_refactoring_for_modularity/dev.duckdb
 dbt_refactoring_practice/dev.duckdb
-dbt_refactoring_practice/dev.duckdb
+profiles.yml
+dbt_snowflake/tests/.gitkeep
+dbt_snowflake/seeds/.gitkeep
+dbt_snowflake/snapshots/.gitkeep
+dbt_snowflake/analyses/.gitkeep
+dbt_snowflake/macros/.gitkeep
