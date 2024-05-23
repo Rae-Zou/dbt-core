@@ -14,3 +14,4 @@ dbt_snowflake/seeds/.gitkeep
 dbt_snowflake/snapshots/.gitkeep
 dbt_snowflake/analyses/.gitkeep
 dbt_snowflake/macros/.gitkeep
+
