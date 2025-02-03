@@ -1,4 +1,4 @@
-{{ config(materialized="table", tags="dim") }}
+{{ config(materialized="view", tags="dim") }}
 
      WITH track AS (
           SELECT track_id, 

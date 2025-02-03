@@ -1,0 +1,63 @@
+version: 2
+
+models:
+  - name: dim_track
+    description: This table has basic information about a tracks
+
+    columns:
+      - name: track_id
+        description: This is a unique identifier for a track
+        tests:
+          - unique
+          - not_null
+
+      - name: track_name
+        description: Name of the track from track table
+
+      - name: artist_name
+        description: Name of the artist from track table
+
+      - name: album_title
+        description: Title of the album from artist table
+
+      - name: genre_name
+        description: Name of the genre from genre table
+
+      - name: track_milliseconds
+        description: Track duration in milliseconds from track table
+
+      - name: track_bytes
+        description: Track bytes from track table
+
+      - name: media_type_name
+        description: Name of the media type from media_type table
+
+
+unit_tests:
+  - name: basic_track_information
+    model: dim_track
+    given:
+      - input: ref('stg_track')
+        rows:
+          - {track_id: 1, track_name: "Test Track", album_id: 1, 
+            genre_id: 1, media_type_id: 1, track_composer_name: "Test Composer",
+            track_milliseconds: 180000, track_bytes: 1000000, track_unit_price: 0.99}
+      - input: ref('stg_album')
+        rows:
+          - {album_id: 1, album_title: "Test Album"}
+      - input: ref('stg_artist')
+        rows:
+          - {artist_id: 1, artist_name: "Test Artist"}
+      - input: ref('stg_genre')
+        rows:
+          - {genre_id: 1, genre_name: "Test Genre"}
+      - input: ref('stg_media_type')
+        rows:
+          - {media_type_id: 1, media_type_name: "Test Media Type"}
+    expect:
+      rows:
+        - {track_id: 1, track_name: "Test Track", artist_name: null,
+          track_composer_name: "Test Composer",album_title: "Test Album",
+          genre_name: "Test Genre",track_milliseconds: 180000,
+          track_bytes: 1000000, media_type_name: "Test Media Type"}
+
